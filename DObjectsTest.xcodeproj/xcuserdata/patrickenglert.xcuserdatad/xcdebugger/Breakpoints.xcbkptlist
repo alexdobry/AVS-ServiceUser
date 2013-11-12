@@ -23,11 +23,25 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DObjectsTest/xyzAppDelegate.m"
-         timestampString = "405358798.30685"
+         timestampString = "405966003.689673"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
+         landmarkName = "-spawnThread:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DObjectsTest/xyzAppDelegate.m"
+         timestampString = "405966003.689673"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "149"
+         endingLineNumber = "149"
          landmarkName = "-spawnThread:"
          landmarkType = "5">
       </FileBreakpoint>
