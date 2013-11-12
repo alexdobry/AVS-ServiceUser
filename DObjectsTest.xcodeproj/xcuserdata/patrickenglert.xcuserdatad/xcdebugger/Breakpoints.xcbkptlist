@@ -23,11 +23,13 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DObjectsTest/xyzAppDelegate.m"
-         timestampString = "404145351.457148"
+         timestampString = "405358798.30685"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39">
+         startingLineNumber = "44"
+         endingLineNumber = "44"
+         landmarkName = "-spawnThread:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
