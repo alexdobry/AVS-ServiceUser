@@ -7,215 +7,83 @@
 //
 
 #import "xyzAppDelegate.h"
-#import "MathProtocol.h"
 #import "Cluster.h"
 #import "DataSource.h"
+#import "Circle.h"
+#import "HoughTransformationProtocol.h"
 
+#include <opencv/cv.h>
+#include <opencv/highgui.h>
+#include <math.h>
 
 @implementation xyzAppDelegate
 
 @synthesize window = _window;
-
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    
-    /*NSArray * providerNames;
-     
-     providerNames = [NSArray arrayWithObjects:@"pip01",@"pip02",@"pip03",@"pip04",@"pip05",@"pip06",@"pip07",@"pip08",@"pip09",@"pip10", nil];
-     
-     for (id portName in providerNames) {
-     
-     
-     NSThread* myThread = [[NSThread alloc] initWithTarget:self
-     selector:@selector(spawnThread:)
-     object:portName];
-     [myThread start]; 
-     }*/
-    
-    DataSource* source = [[DataSource alloc] init];
-    [[Cluster alloc] initWithDataSource:source];
-    
-    [pool drain];
-}
 
 - (void)dealloc
 {
     [super dealloc];
 }
 
-/*NSLock* myLock;
-static unsigned int counter = 2;
+- (IplImage*)drawCircles:(NSMutableArray*) circles on:(IplImage*) img {
+    for (Circle* circle in circles) {
+        cvCircle(img, cvPoint(circle.x, circle.y), circle.r, CV_RGB(255,0,0), 3, 8, 0);
+    }
+    return img;
+}
 
-- (int) incrementValue
+- (double)getFps:(time_t)end i:(int *)i start:(time_t)start
 {
-    int newNumber;
-    [myLock lock];
-    newNumber = counter++;
-    [myLock unlock];
-    return newNumber;
-}*/
+    time(&end);   
+    return ++(*i) / (difftime (end, start));
+}
 
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{    
+//    NSMutableArray* circles = [[NSMutableArray alloc] init];
+//    DataSource* source = [[DataSource alloc] init];
 
-/*- (void)getInfo:(NSString*)portName{
-
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-
-    NSString * servicePort = [portName stringByAppendingString:@"_service"];
+    IplImage* img = NULL;
+    CvCapture *capture = 0;
+    capture = cvCaptureFromCAM(-1);
+    if (!capture) {
+        NSLog(@"Cannot initialize webcam");
+    }
+    CvFont* font;
+    cvInitFont(font,CV_FONT_HERSHEY_DUPLEX,1,0.8,0.2,1,8);
     
-       
-    int currentNumber = [self incrementValue];
-
-    id mathProtocol;
-    NSConnection *theConnection = nil;
-    NSSocketPort *port = nil;
+    cvNamedWindow("result", CV_WINDOW_AUTOSIZE);
     
-    while (currentNumber < 2100000000) {
-        
+    time_t start, end;
+    double fps;
+    int i = 0;
     
-        if (theConnection == nil) {
-            
-            port = (NSSocketPort *) [[NSSocketPortNameServer sharedInstance] portForName:servicePort host:@"*"];
-            
-            if (port == nil) {
-                NSLog(@"keine verbindung zu %@", servicePort);
-                sleep(5);
-                continue;
-            } 
-            theConnection = [NSConnection connectionWithReceivePort:nil sendPort:port];
-            
-            
-            [theConnection setRequestTimeout:60];
-            [theConnection setReplyTimeout:60];
-            
-            mathProtocol = [[theConnection rootProxy] retain];                
-            [mathProtocol setProtocolForProxy:@protocol(MathProtocol)];
-                      
-        }
+    time(&start);
  
-
-        
-        
-    //  Der try Block ist für den Ausfall eines Service Providers nötig. Der aufruf des Distributed Objects wirft eine Exception nach Timeout.
-    @try {
-        
-        if ([mathProtocol isPrime:currentNumber]) {
-            NSLog(@"%@ %d ist eine Primzahl", servicePort, currentNumber);
-            
+    while (true) {
+        @autoreleasepool {
+            img = cvQueryFrame(capture);
+            if (!img) {
+                NSLog(@"Failed to retrive frame");
             }
-        else {
-            NSLog(@"%@ %d ist keine Primzahl", servicePort, currentNumber);
-
+            //            if (i % 2 == 0) {
+            //                circles = [hough performHoughTransformationWithIplImage:img];
+            //                img = [self drawCircles:circles on:img];
+            //            }
+            
+            fps = [self getFps:end i:&i start:start];
+            char c=cvWaitKey(33);
+            if(c==27) break;
+            
+            cvPutText(img, [[NSString stringWithFormat:@"%.2lf", fps] UTF8String], cvPoint(30,30), font, cvScalarAll(255));
+            cvShowImage("result", img);
         }
-            currentNumber = [self incrementValue];     
+
         
     }
-        
-        @catch (NSException *exception) {
-            if ([[exception name] isEqualToString:NSPortTimeoutException])
-            {
-                NSLog(@"Verbindung verloren: %d", currentNumber);
-                [mathProtocol release];
-                //[[NSSocketPortNameServer sharedInstance] removePortForName:portName];
- */
-                /*[port release];
-                [theConnection release];
-                mathProtocol = nil;
-                theConnection = nil;
-                port = nil;
-                */
-/*                break;//Muss hoch sein weil das Betriebssystem den alten Port ziemlich lange offen hält
-            }
-        
-        }
-        @finally {
-        
-        }
-    }
-    [pool release];
-}*/
-
-/*- (void)spawnThread:(NSString*)portName
-{
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
-    id mathProtocol;
+//    [[Cluster alloc] initWithDataSource:source];
 
-    
-    NSConnection *theConnection = nil;
-    NSSocketPort *port = nil;
-   
-    
-    
-
-    
-    int currentNumber = [self incrementValue];
-        while ( currentNumber < 2100000000 ){
-
-            if (theConnection == nil) {
-                
-                port = (NSSocketPort *) [[NSSocketPortNameServer sharedInstance] portForName:portName host:@"*"];
-               
-                if (port == nil) {
-                    NSLog(@"keine verbindung zu %@", portName);
-                    sleep(5);
-                    continue;
-                } 
-                theConnection = [NSConnection connectionWithReceivePort:nil sendPort:port];
-                
-
-                [theConnection setRequestTimeout:60];
-                [theConnection setReplyTimeout:60];
-                
-                mathProtocol = [[theConnection rootProxy] retain];                
-                [mathProtocol setProtocolForProxy:@protocol(MathProtocol)];
-                
-                NSThread* myThread = [[NSThread alloc] initWithTarget:self
-                                                             selector:@selector(getInfo:)
-                                                               object:portName];
-                [myThread start];
-                
-            }
-            
-            //  Der try Block ist für den Ausfall eines Service Providers nötig. Der aufruf des Distributed Objects wirft eine Exception nach Timeout.
-            @try {
-                
-                if ([mathProtocol isPrime:currentNumber]) {
-                    NSLog(@"%@ %d ist eine Primzahl", portName, currentNumber);
-                    
-                }
-                else {
-                    NSLog(@"%@ %d ist keine Primzahl", portName, currentNumber);
-                    
-                }
-                currentNumber = [self incrementValue];            
-            }
-            @catch (NSException *exception) {
-                if ([[exception name] isEqualToString:NSPortTimeoutException])
-                {
-                    NSLog(@"Verbindung verloren: %@ %d", portName, currentNumber);
-                    [mathProtocol release];
-                    [[NSSocketPortNameServer sharedInstance] removePortForName:portName];
-                    [port release];
-                    [theConnection release];
-                    mathProtocol = nil;
-                    theConnection = nil;
-                    port = nil;
-                     
-                    sleep(120); //Muss hoch sein weil das Betriebssystem den alten Port ziemlich lange offen hält
-                }
-                
-            }
-            @finally {
-                
-            }
-
-        }
-
-    
-    [pool release];
-}*/
-
+}
 
 @end

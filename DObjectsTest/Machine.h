@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MathProtocol.h"
+#import "HoughTransformationProtocol.h"
 #import "InformantProtocol.h"
 #import "DataSource.h"
 

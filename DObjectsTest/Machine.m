@@ -125,9 +125,8 @@
     NSConnection *theConnection = nil;
     NSSocketPort *port = nil;
     
-    id mathProtocol;
+    id houghProtocol;
      
-    
     //Verbindung herstellen (ohne Fehlerbehandlung, da der Thread sonst sowieso beendet wird)
     port = (NSSocketPort *) [[[NSSocketPortNameServer sharedInstance] portForName:portName host:@"*"] retain];
     theConnection = [NSConnection connectionWithReceivePort:nil sendPort:port];
@@ -135,8 +134,8 @@
     [theConnection setRequestTimeout:60];
     [theConnection setReplyTimeout:60];
             
-    mathProtocol = [[theConnection rootProxy] retain];                
-    [mathProtocol setProtocolForProxy:@protocol(MathProtocol)];
+    houghProtocol = [[theConnection rootProxy] retain];                
+    [houghProtocol setProtocolForProxy:@protocol(HoughTransformationProtocol)];
     
     
     int currentNumber;
@@ -148,13 +147,13 @@
         @try {
             @autoreleasepool {
            currentNumber = [dataSource getNextDataset];
-            if ([mathProtocol isPrime:currentNumber]) {
-                NSLog(@"%@ %d ist eine Primzahl", portName, currentNumber);
-                
-            }
-            else {
-                NSLog(@"%@ %d ist keine Primzahl", portName, currentNumber);
-            }
+//            if ([mathProtocol isPrime:currentNumber]) {
+//                NSLog(@"%@ %d ist eine Primzahl", portName, currentNumber);
+//                
+//            }
+//            else {
+//                NSLog(@"%@ %d ist keine Primzahl", portName, currentNumber);
+//            }
             }
         }
         
