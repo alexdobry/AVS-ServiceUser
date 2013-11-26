@@ -10,4 +10,14 @@
 
 @implementation DataSource
 
+@synthesize data;
+
+-(int)getNextDataset {
+    @synchronized(self) {
+        //int ret = data;
+        //[self setData:data+1];
+        return data++;
+    }
+}
+
 @end

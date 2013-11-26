@@ -10,4 +10,6 @@
 
 @protocol InformantProtocol <NSObject>
 
+- (NSMutableArray*)getInfo;
+
 @end

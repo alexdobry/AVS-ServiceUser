@@ -7,7 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MathProtocol.h"
+#import "InformantProtocol.h"
+#import "DataSource.h"
 
-@interface MachineThread : NSObject
+@interface Machine : NSObject
+
+@property(retain) NSString* portName;
+@property BOOL connected;
+
+@property(retain) DataSource* dataSource;
+
+@property(retain) NSThread* statusThread;
+@property(retain) NSThread* workerThread;
+
+-(Machine*) initWithName:(NSString*)name dataSource:(DataSource*)source;
 
 @end

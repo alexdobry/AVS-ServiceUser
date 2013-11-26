@@ -8,20 +8,44 @@
 
 #import "xyzAppDelegate.h"
 #import "MathProtocol.h"
-
-
+#import "Cluster.h"
+#import "DataSource.h"
 
 
 @implementation xyzAppDelegate
 
 @synthesize window = _window;
 
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    
+    /*NSArray * providerNames;
+     
+     providerNames = [NSArray arrayWithObjects:@"pip01",@"pip02",@"pip03",@"pip04",@"pip05",@"pip06",@"pip07",@"pip08",@"pip09",@"pip10", nil];
+     
+     for (id portName in providerNames) {
+     
+     
+     NSThread* myThread = [[NSThread alloc] initWithTarget:self
+     selector:@selector(spawnThread:)
+     object:portName];
+     [myThread start]; 
+     }*/
+    
+    DataSource* source = [[DataSource alloc] init];
+    [[Cluster alloc] initWithDataSource:source];
+    
+    [pool drain];
+}
+
 - (void)dealloc
 {
     [super dealloc];
 }
 
-NSLock* myLock;
+/*NSLock* myLock;
 static unsigned int counter = 2;
 
 - (int) incrementValue
@@ -31,10 +55,10 @@ static unsigned int counter = 2;
     newNumber = counter++;
     [myLock unlock];
     return newNumber;
-}
+}*/
 
 
-- (void)getInfo:(NSString*)portName{
+/*- (void)getInfo:(NSString*)portName{
 
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
@@ -94,13 +118,14 @@ static unsigned int counter = 2;
                 NSLog(@"Verbindung verloren: %d", currentNumber);
                 [mathProtocol release];
                 //[[NSSocketPortNameServer sharedInstance] removePortForName:portName];
+ */
                 /*[port release];
                 [theConnection release];
                 mathProtocol = nil;
                 theConnection = nil;
                 port = nil;
                 */
-                break;//Muss hoch sein weil das Betriebssystem den alten Port ziemlich lange offen hält
+/*                break;//Muss hoch sein weil das Betriebssystem den alten Port ziemlich lange offen hält
             }
         
         }
@@ -109,9 +134,9 @@ static unsigned int counter = 2;
         }
     }
     [pool release];
-}
+}*/
 
-- (void)spawnThread:(NSString*)portName
+/*- (void)spawnThread:(NSString*)portName
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
@@ -190,31 +215,7 @@ static unsigned int counter = 2;
 
     
     [pool release];
-}
-
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-        
-    NSArray * providerNames;
-    
-    providerNames = [NSArray arrayWithObjects:@"pip01",@"pip02",@"pip03",@"pip04",@"pip05",@"pip06",@"pip07",@"pip08",@"pip09",@"pip10", nil];
-    
-    for (id portName in providerNames) {
-    
-        
-        NSThread* myThread = [[NSThread alloc] initWithTarget:self
-                                                     selector:@selector(spawnThread:)
-                                                       object:portName];
-        [myThread start]; 
-    }
-   
-    [pool drain];
-}
-
-
-
+}*/
 
 
 @end

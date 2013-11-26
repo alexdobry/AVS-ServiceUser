@@ -10,4 +10,8 @@
 
 @interface DataSource : NSObject
 
+@property int data;
+
+-(int)getNextDataset;
+
 @end

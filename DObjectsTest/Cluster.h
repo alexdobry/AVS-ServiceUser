@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DataSource.h"
+#import "Machine.h"
 
-@interface ClusterManager : NSObject
+@interface Cluster : NSObject
+
+@property(retain) DataSource* dataSource;
+@property(retain) NSMutableArray* machineThreads;
+
+-(Cluster*) initWithDataSource:(DataSource*)source;
 
 @end
