@@ -11,6 +11,12 @@
 #import "InformantProtocol.h"
 #import "DataSource.h"
 
+#import "Circle.h"
+#include <opencv/cv.h>
+#include <opencv/cxcore.h>
+#include <opencv/highgui.h>
+#include <math.h>
+
 @interface Machine : NSObject
 
 @property(retain) NSString* portName;
@@ -23,4 +29,7 @@
 
 -(Machine*) initWithName:(NSString*)name dataSource:(DataSource*)source;
 
+-(IplImage*)drawCircles:(NSMutableArray*) circles on:(IplImage*) img;
+- (NSImage*)imageFromIplImage:(IplImage *)image;
+- (IplImage *)createIplImageFromUIImage:(NSImage *)image;
 @end

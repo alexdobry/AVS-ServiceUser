@@ -13,5 +13,6 @@
 
 - (NSMutableArray*) performHoughTransformationWithImageUrl:(NSString*) imageUrl;
 - (NSMutableArray*) performHoughTransformationWithIplImage:(IplImage*) iplImage;
+- (NSMutableArray*) performHoughTransformationWithNSImage:(NSImage*) img;
 
 @end

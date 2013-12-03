@@ -12,11 +12,38 @@
 
 @synthesize data;
 
--(int)getNextDataset {
+CvCapture *capture;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        // setup opencv stuff
+        capture = cvCaptureFromCAM(-1);
+        if (!capture) {
+            NSLog(@"Cannot initialize webcam");
+        }
+        //CvFont* font;
+        //cvInitFont(font,CV_FONT_HERSHEY_DUPLEX,1,0.8,0.2,1,8);
+    }
+    return self;
+}
+
+-(IplImage*)getNextDataset {
     @synchronized(self) {
         //int ret = data;
         //[self setData:data+1];
-        return data++;
+        //return data++;
+        
+        
+        IplImage* img = NULL;
+        
+        @autoreleasepool {
+            img = cvQueryFrame(capture);
+            if (!img) {
+                NSLog(@"Failed to retrive frame");
+            }
+        }
+        return img;
     }
 }
 

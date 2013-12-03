@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#include <opencv/cv.h>
+#include <opencv/highgui.h>
+#include <math.h>
 
 @interface DataSource : NSObject
 
 @property int data;
 
--(int)getNextDataset;
+-(IplImage*)getNextDataset;
 
 @end

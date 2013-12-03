@@ -54,7 +54,7 @@
             port = (NSSocketPort *) [[NSSocketPortNameServer sharedInstance] portForName:servicePort host:@"*"];
             if (port == nil) {
                 // Verbindung kann nicht hergestellt werden
-                NSLog(@"keine verbindung zu %@", portName);
+//                NSLog(@"keine verbindung zu %@", portName);
                 sleep(5);
                 continue;
             }
@@ -138,7 +138,8 @@
     [houghProtocol setProtocolForProxy:@protocol(HoughTransformationProtocol)];
     
     
-    int currentNumber;
+    IplImage* img = NULL;
+    NSMutableArray* circles = [[NSMutableArray alloc] init];
     
     // Do Work
     while (connected) {
@@ -146,14 +147,10 @@
         //  Der try Block ist für den Ausfall eines Service Providers nötig. Der aufruf des Distributed Objects wirft eine Exception nach Timeout.
         @try {
             @autoreleasepool {
-           currentNumber = [dataSource getNextDataset];
-//            if ([mathProtocol isPrime:currentNumber]) {
-//                NSLog(@"%@ %d ist eine Primzahl", portName, currentNumber);
-//                
-//            }
-//            else {
-//                NSLog(@"%@ %d ist keine Primzahl", portName, currentNumber);
-//            }
+                img = [dataSource getNextDataset];
+                circles = [houghProtocol performHoughTransformationWithNSImage:[self imageFromIplImage:img]];
+                img = [self drawCircles:circles on:img];
+                cvShowImage("result", img);
             }
         }
         
@@ -161,16 +158,48 @@
             if ([[exception name] isEqualToString:NSPortTimeoutException])
             {
                 // Falls tatsächlich keine Verbindung zum Provieder mehr besteht, so wird dies im Status-Thread erkannt
-                NSLog(@"Datenpaket Nr. %d konnte nicht bearbeitet werden (Timeout).", currentNumber);
+                NSLog(@"Datenpaket Nr. ... konnte nicht bearbeitet werden (Timeout).");
             }
             
         }
         @finally {
             
         }
-    }
+  }
     [pool release];
 
+}
+
+- (IplImage*)drawCircles:(NSMutableArray*) circles on:(IplImage*) img {
+    for (Circle* circle in circles) {
+        cvCircle(img, cvPoint(circle.x, circle.y), circle.r, CV_RGB(255,0,0), 3, 8, 0);
+    }
+    return img;
+}
+
+- (NSImage*)imageFromIplImage:(IplImage *)image {
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    // Allocating the buffer for CGImage
+    NSData *data =
+    [NSData dataWithBytes:image->imageData length:image->imageSize];
+    CGDataProviderRef provider =
+    CGDataProviderCreateWithCFData((CFDataRef)data);
+    // Creating CGImage from chunk of IplImage
+    CGImageRef imageRef = CGImageCreate(
+                                        image->width, image->height,
+                                        image->depth, image->depth * image->nChannels, image->widthStep,
+                                        colorSpace, kCGImageAlphaNone|kCGBitmapByteOrderDefault,
+                                        provider, NULL, false, kCGRenderingIntentDefault
+                                        );
+    // Getting UIImage from CGImage
+    NSSize size;
+    size.height = image->height;
+    size.width = image->width;
+    NSImage *ret = [[NSImage alloc] initWithCGImage:imageRef size:size];
+    CGImageRelease(imageRef);
+    CGDataProviderRelease(provider);
+    CGColorSpaceRelease(colorSpace);
+    return ret;
 }
 
 @end
