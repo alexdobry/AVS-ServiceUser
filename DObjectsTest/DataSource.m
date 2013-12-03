@@ -7,19 +7,19 @@
 //
 
 #import "DataSource.h"
+#import "HoughImage.h"
 
 @implementation DataSource
 
-@synthesize data;
-
-CvCapture *capture;
+@synthesize capture = _capture;
+@synthesize counter = _counter;
 
 - (id)init {
     self = [super init];
     if (self) {
-        // setup opencv stuff
-        capture = cvCaptureFromCAM(-1);
-        if (!capture) {
+        self.counter = 0;
+        self.capture = cvCaptureFromCAM(-1);
+        if (!self.capture) {
             NSLog(@"Cannot initialize webcam");
         }
         //CvFont* font;
@@ -28,22 +28,21 @@ CvCapture *capture;
     return self;
 }
 
--(IplImage*)getNextDataset {
+-(HoughImage*)getNextDataset {
     @synchronized(self) {
         //int ret = data;
         //[self setData:data+1];
         //return data++;
         
-        
-        IplImage* img = NULL;
+        HoughImage* houghImg = nil;
         
         @autoreleasepool {
-            img = cvQueryFrame(capture);
-            if (!img) {
+            houghImg = [[HoughImage alloc] initWithIplImage:cvQueryFrame(self.capture) andId:self.counter++];
+            if (!houghImg) {
                 NSLog(@"Failed to retrive frame");
-            }
+            }            
         }
-        return img;
+        return houghImg;
     }
 }
 

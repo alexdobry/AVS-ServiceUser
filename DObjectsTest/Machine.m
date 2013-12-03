@@ -7,6 +7,7 @@
 //
 
 #import "Machine.h"
+#import "HoughImage.h"
 
 @implementation Machine
 
@@ -138,7 +139,7 @@
     [houghProtocol setProtocolForProxy:@protocol(HoughTransformationProtocol)];
     
     
-    IplImage* img = NULL;
+    HoughImage* houghImg = NULL;
     NSMutableArray* circles = [[NSMutableArray alloc] init];
     
     // Do Work
@@ -147,10 +148,12 @@
         //  Der try Block ist für den Ausfall eines Service Providers nötig. Der aufruf des Distributed Objects wirft eine Exception nach Timeout.
         @try {
             @autoreleasepool {
-                img = [dataSource getNextDataset];
-                circles = [houghProtocol performHoughTransformationWithNSImage:[self imageFromIplImage:img]];
-                img = [self drawCircles:circles on:img];
-                cvShowImage("result", img);
+                houghImg = [dataSource getNextDataset];
+                circles = [houghProtocol performHoughTransformationWithNSImage:[self createNSImageFromIplImage:houghImg.img]];
+                houghImg.img = [self drawCircles:circles on:houghImg.img];
+                @synchronized(dataSource) {
+                    cvShowImage("result", houghImg.img);
+                }
             }
         }
         
@@ -177,7 +180,7 @@
     return img;
 }
 
-- (NSImage*)imageFromIplImage:(IplImage *)image {
+- (NSImage*)createNSImageFromIplImage:(IplImage *)image {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     // Allocating the buffer for CGImage
     NSData *data =

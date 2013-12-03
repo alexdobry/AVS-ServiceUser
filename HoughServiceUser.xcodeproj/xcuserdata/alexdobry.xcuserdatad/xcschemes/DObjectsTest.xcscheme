@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "397D162F18169BC100C9EA21"
-               BuildableName = "DObjectsTest.app"
+               BuildableName = "HoughServiceUser.app"
                BlueprintName = "HoughServiceUser"
                ReferencedContainer = "container:HoughServiceUser.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "397D165018169BC200C9EA21"
-               BuildableName = "DObjectsTestTests.octest"
+               BuildableName = "HoughServiceUserTests.octest"
                BlueprintName = "HoughServiceUserTests"
                ReferencedContainer = "container:HoughServiceUser.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "397D162F18169BC100C9EA21"
-            BuildableName = "DObjectsTest.app"
+            BuildableName = "HoughServiceUser.app"
             BlueprintName = "HoughServiceUser"
             ReferencedContainer = "container:HoughServiceUser.xcodeproj">
          </BuildableReference>
@@ -60,7 +60,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "397D162F18169BC100C9EA21"
-            BuildableName = "DObjectsTest.app"
+            BuildableName = "HoughServiceUser.app"
             BlueprintName = "HoughServiceUser"
             ReferencedContainer = "container:HoughServiceUser.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "397D162F18169BC100C9EA21"
-            BuildableName = "DObjectsTest.app"
+            BuildableName = "HoughServiceUser.app"
             BlueprintName = "HoughServiceUser"
             ReferencedContainer = "container:HoughServiceUser.xcodeproj">
          </BuildableReference>

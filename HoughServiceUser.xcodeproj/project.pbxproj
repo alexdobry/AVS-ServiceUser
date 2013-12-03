@@ -25,6 +25,7 @@
 		068763441844EE800028BEB3 /* libopencv_ts.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 068763331844EE800028BEB3 /* libopencv_ts.2.4.4.dylib */; };
 		068763451844EE800028BEB3 /* libopencv_video.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 068763341844EE800028BEB3 /* libopencv_video.2.4.4.dylib */; };
 		068763461844EE800028BEB3 /* libopencv_videostab.2.4.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 068763351844EE800028BEB3 /* libopencv_videostab.2.4.4.dylib */; };
+		06C45E58184E509500B3C976 /* HoughImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C45E57184E509500B3C976 /* HoughImage.m */; };
 		397D163518169BC100C9EA21 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397D163418169BC100C9EA21 /* Cocoa.framework */; };
 		397D163F18169BC100C9EA21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 397D163D18169BC100C9EA21 /* InfoPlist.strings */; };
 		397D164118169BC100C9EA21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 397D164018169BC100C9EA21 /* main.m */; };
@@ -69,6 +70,8 @@
 		068763331844EE800028BEB3 /* libopencv_ts.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libopencv_ts.2.4.4.dylib; sourceTree = "<group>"; };
 		068763341844EE800028BEB3 /* libopencv_video.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libopencv_video.2.4.4.dylib; sourceTree = "<group>"; };
 		068763351844EE800028BEB3 /* libopencv_videostab.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libopencv_videostab.2.4.4.dylib; sourceTree = "<group>"; };
+		06C45E56184E509500B3C976 /* HoughImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoughImage.h; sourceTree = "<group>"; };
+		06C45E57184E509500B3C976 /* HoughImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoughImage.m; sourceTree = "<group>"; };
 		397D163018169BC100C9EA21 /* HoughServiceUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoughServiceUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		397D163418169BC100C9EA21 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		397D163718169BC100C9EA21 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -208,6 +211,8 @@
 				F0745078183BC01200ED1C09 /* DataSource.m */,
 				0624B5D21844E6B700FA6958 /* Circle.h */,
 				0624B5D31844E6B700FA6958 /* Circle.m */,
+				06C45E56184E509500B3C976 /* HoughImage.h */,
+				06C45E57184E509500B3C976 /* HoughImage.m */,
 				0624B5D61844E6E800FA6958 /* HoughTransformationProtocol.h */,
 				397D164918169BC200C9EA21 /* MainMenu.xib */,
 				397D163B18169BC100C9EA21 /* Supporting Files */,
@@ -340,6 +345,7 @@
 				F0745073183BA4E500ED1C09 /* Machine.m in Sources */,
 				F0745079183BC01200ED1C09 /* DataSource.m in Sources */,
 				0624B5D41844E6B700FA6958 /* Circle.m in Sources */,
+				06C45E58184E509500B3C976 /* HoughImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

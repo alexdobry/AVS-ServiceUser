@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HoughImage.h"
+
 #include <opencv/cv.h>
 #include <opencv/highgui.h>
 #include <math.h>
 
 @interface DataSource : NSObject
 
-@property int data;
+@property CvCapture *capture;
+@property long counter;
 
--(IplImage*)getNextDataset;
+-(HoughImage*)getNextDataset;
 
 @end
