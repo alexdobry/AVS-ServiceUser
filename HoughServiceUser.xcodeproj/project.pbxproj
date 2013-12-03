@@ -29,12 +29,10 @@
 		397D163F18169BC100C9EA21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 397D163D18169BC100C9EA21 /* InfoPlist.strings */; };
 		397D164118169BC100C9EA21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 397D164018169BC100C9EA21 /* main.m */; };
 		397D164518169BC100C9EA21 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 397D164318169BC100C9EA21 /* Credits.rtf */; };
-		397D164818169BC100C9EA21 /* xyzAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 397D164718169BC100C9EA21 /* xyzAppDelegate.m */; };
+		397D164818169BC100C9EA21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 397D164718169BC100C9EA21 /* AppDelegate.m */; };
 		397D164B18169BC200C9EA21 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397D164918169BC200C9EA21 /* MainMenu.xib */; };
 		397D165318169BC200C9EA21 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397D165218169BC200C9EA21 /* SenTestingKit.framework */; };
 		397D165418169BC200C9EA21 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397D163418169BC100C9EA21 /* Cocoa.framework */; };
-		397D165C18169BC200C9EA21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 397D165A18169BC200C9EA21 /* InfoPlist.strings */; };
-		397D165F18169BC200C9EA21 /* DObjectsTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 397D165E18169BC200C9EA21 /* DObjectsTestTests.m */; };
 		F074506F183BA42D00ED1C09 /* Cluster.m in Sources */ = {isa = PBXBuildFile; fileRef = F074506E183BA42D00ED1C09 /* Cluster.m */; };
 		F0745073183BA4E500ED1C09 /* Machine.m in Sources */ = {isa = PBXBuildFile; fileRef = F0745072183BA4E500ED1C09 /* Machine.m */; };
 		F0745079183BC01200ED1C09 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F0745078183BC01200ED1C09 /* DataSource.m */; };
@@ -76,20 +74,16 @@
 		397D163718169BC100C9EA21 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		397D163818169BC100C9EA21 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		397D163918169BC100C9EA21 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		397D163C18169BC100C9EA21 /* HoughServiceUser-Info.plist */ = {isa = PBXFileReference; path = "HoughServiceUser-Info.plist"; sourceTree = "<group>"; };
+		397D163C18169BC100C9EA21 /* HoughServiceUser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HoughServiceUser-Info.plist"; sourceTree = "<group>"; };
 		397D163E18169BC100C9EA21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		397D164018169BC100C9EA21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		397D164218169BC100C9EA21 /* HoughServiceUser-Prefix.pch */ = {isa = PBXFileReference; path = "HoughServiceUser-Prefix.pch"; sourceTree = "<group>"; };
+		397D164218169BC100C9EA21 /* HoughServiceUser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HoughServiceUser-Prefix.pch"; sourceTree = "<group>"; };
 		397D164418169BC100C9EA21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		397D164618169BC100C9EA21 /* xyzAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xyzAppDelegate.h; sourceTree = "<group>"; };
-		397D164718169BC100C9EA21 /* xyzAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xyzAppDelegate.m; sourceTree = "<group>"; };
+		397D164618169BC100C9EA21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		397D164718169BC100C9EA21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		397D164A18169BC200C9EA21 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		397D165118169BC200C9EA21 /* HoughServiceUserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoughServiceUserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		397D165218169BC200C9EA21 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		397D165918169BC200C9EA21 /* HoughServiceUserTests-Info.plist */ = {isa = PBXFileReference; path = "HoughServiceUserTests-Info.plist"; sourceTree = "<group>"; };
-		397D165B18169BC200C9EA21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		397D165D18169BC200C9EA21 /* DObjectsTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DObjectsTestTests.h; sourceTree = "<group>"; };
-		397D165E18169BC200C9EA21 /* DObjectsTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DObjectsTestTests.m; sourceTree = "<group>"; };
 		F074506D183BA42D00ED1C09 /* Cluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cluster.h; sourceTree = "<group>"; };
 		F074506E183BA42D00ED1C09 /* Cluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cluster.m; sourceTree = "<group>"; };
 		F0745071183BA4E500ED1C09 /* Machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Machine.h; sourceTree = "<group>"; };
@@ -137,7 +131,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0624B6DD1844EBA700FA6958 /* New Group */ = {
+		0624B6DD1844EBA700FA6958 /* opencv libs */ = {
 			isa = PBXGroup;
 			children = (
 				068763251844EE800028BEB3 /* libopencv_calib3d.2.4.4.dylib */,
@@ -158,14 +152,13 @@
 				068763341844EE800028BEB3 /* libopencv_video.2.4.4.dylib */,
 				068763351844EE800028BEB3 /* libopencv_videostab.2.4.4.dylib */,
 			);
-			name = "New Group";
+			name = "opencv libs";
 			sourceTree = "<group>";
 		};
 		397D162518169BC100C9EA21 = {
 			isa = PBXGroup;
 			children = (
-				397D163A18169BC100C9EA21 /* DObjectsTest */,
-				397D165718169BC200C9EA21 /* DObjectsTestTests */,
+				397D163A18169BC100C9EA21 /* HoughServiceUser */,
 				397D163318169BC100C9EA21 /* Frameworks */,
 				397D163118169BC100C9EA21 /* Products */,
 			);
@@ -200,12 +193,12 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		397D163A18169BC100C9EA21 /* DObjectsTest */ = {
+		397D163A18169BC100C9EA21 /* HoughServiceUser */ = {
 			isa = PBXGroup;
 			children = (
-				0624B6DD1844EBA700FA6958 /* New Group */,
-				397D164618169BC100C9EA21 /* xyzAppDelegate.h */,
-				397D164718169BC100C9EA21 /* xyzAppDelegate.m */,
+				0624B6DD1844EBA700FA6958 /* opencv libs */,
+				397D164618169BC100C9EA21 /* AppDelegate.h */,
+				397D164718169BC100C9EA21 /* AppDelegate.m */,
 				F074506D183BA42D00ED1C09 /* Cluster.h */,
 				F074506E183BA42D00ED1C09 /* Cluster.m */,
 				F0745071183BA4E500ED1C09 /* Machine.h */,
@@ -219,6 +212,7 @@
 				397D164918169BC200C9EA21 /* MainMenu.xib */,
 				397D163B18169BC100C9EA21 /* Supporting Files */,
 			);
+			name = HoughServiceUser;
 			path = DObjectsTest;
 			sourceTree = "<group>";
 		};
@@ -230,25 +224,6 @@
 				397D164018169BC100C9EA21 /* main.m */,
 				397D164218169BC100C9EA21 /* HoughServiceUser-Prefix.pch */,
 				397D164318169BC100C9EA21 /* Credits.rtf */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		397D165718169BC200C9EA21 /* DObjectsTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				397D165D18169BC200C9EA21 /* DObjectsTestTests.h */,
-				397D165E18169BC200C9EA21 /* DObjectsTestTests.m */,
-				397D165818169BC200C9EA21 /* Supporting Files */,
-			);
-			path = DObjectsTestTests;
-			sourceTree = "<group>";
-		};
-		397D165818169BC200C9EA21 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				397D165918169BC200C9EA21 /* HoughServiceUserTests-Info.plist */,
-				397D165A18169BC200C9EA21 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -333,7 +308,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				397D165C18169BC200C9EA21 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				397D164118169BC100C9EA21 /* main.m in Sources */,
-				397D164818169BC100C9EA21 /* xyzAppDelegate.m in Sources */,
+				397D164818169BC100C9EA21 /* AppDelegate.m in Sources */,
 				F074506F183BA42D00ED1C09 /* Cluster.m in Sources */,
 				F0745073183BA4E500ED1C09 /* Machine.m in Sources */,
 				F0745079183BC01200ED1C09 /* DataSource.m in Sources */,
@@ -373,7 +347,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				397D165F18169BC200C9EA21 /* DObjectsTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,14 +383,6 @@
 				397D164A18169BC200C9EA21 /* en */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		397D165A18169BC200C9EA21 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				397D165B18169BC200C9EA21 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
