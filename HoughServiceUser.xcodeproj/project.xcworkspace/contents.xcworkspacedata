@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DObjectsTest.xcodeproj">
+      location = "self:HoughServiceUser.xcodeproj">
    </FileRef>
 </Workspace>

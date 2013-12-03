@@ -71,22 +71,22 @@
 		068763331844EE800028BEB3 /* libopencv_ts.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libopencv_ts.2.4.4.dylib; sourceTree = "<group>"; };
 		068763341844EE800028BEB3 /* libopencv_video.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libopencv_video.2.4.4.dylib; sourceTree = "<group>"; };
 		068763351844EE800028BEB3 /* libopencv_videostab.2.4.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libopencv_videostab.2.4.4.dylib; sourceTree = "<group>"; };
-		397D163018169BC100C9EA21 /* DObjectsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DObjectsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		397D163018169BC100C9EA21 /* HoughServiceUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoughServiceUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		397D163418169BC100C9EA21 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		397D163718169BC100C9EA21 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		397D163818169BC100C9EA21 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		397D163918169BC100C9EA21 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		397D163C18169BC100C9EA21 /* DObjectsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DObjectsTest-Info.plist"; sourceTree = "<group>"; };
+		397D163C18169BC100C9EA21 /* HoughServiceUser-Info.plist */ = {isa = PBXFileReference; path = "HoughServiceUser-Info.plist"; sourceTree = "<group>"; };
 		397D163E18169BC100C9EA21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		397D164018169BC100C9EA21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		397D164218169BC100C9EA21 /* DObjectsTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DObjectsTest-Prefix.pch"; sourceTree = "<group>"; };
+		397D164218169BC100C9EA21 /* HoughServiceUser-Prefix.pch */ = {isa = PBXFileReference; path = "HoughServiceUser-Prefix.pch"; sourceTree = "<group>"; };
 		397D164418169BC100C9EA21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		397D164618169BC100C9EA21 /* xyzAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xyzAppDelegate.h; sourceTree = "<group>"; };
 		397D164718169BC100C9EA21 /* xyzAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xyzAppDelegate.m; sourceTree = "<group>"; };
 		397D164A18169BC200C9EA21 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		397D165118169BC200C9EA21 /* DObjectsTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DObjectsTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		397D165118169BC200C9EA21 /* HoughServiceUserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoughServiceUserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		397D165218169BC200C9EA21 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		397D165918169BC200C9EA21 /* DObjectsTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DObjectsTestTests-Info.plist"; sourceTree = "<group>"; };
+		397D165918169BC200C9EA21 /* HoughServiceUserTests-Info.plist */ = {isa = PBXFileReference; path = "HoughServiceUserTests-Info.plist"; sourceTree = "<group>"; };
 		397D165B18169BC200C9EA21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		397D165D18169BC200C9EA21 /* DObjectsTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DObjectsTestTests.h; sourceTree = "<group>"; };
 		397D165E18169BC200C9EA21 /* DObjectsTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DObjectsTestTests.m; sourceTree = "<group>"; };
@@ -174,8 +174,8 @@
 		397D163118169BC100C9EA21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				397D163018169BC100C9EA21 /* DObjectsTest.app */,
-				397D165118169BC200C9EA21 /* DObjectsTestTests.octest */,
+				397D163018169BC100C9EA21 /* HoughServiceUser.app */,
+				397D165118169BC200C9EA21 /* HoughServiceUserTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,10 +225,10 @@
 		397D163B18169BC100C9EA21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				397D163C18169BC100C9EA21 /* DObjectsTest-Info.plist */,
+				397D163C18169BC100C9EA21 /* HoughServiceUser-Info.plist */,
 				397D163D18169BC100C9EA21 /* InfoPlist.strings */,
 				397D164018169BC100C9EA21 /* main.m */,
-				397D164218169BC100C9EA21 /* DObjectsTest-Prefix.pch */,
+				397D164218169BC100C9EA21 /* HoughServiceUser-Prefix.pch */,
 				397D164318169BC100C9EA21 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -247,7 +247,7 @@
 		397D165818169BC200C9EA21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				397D165918169BC200C9EA21 /* DObjectsTestTests-Info.plist */,
+				397D165918169BC200C9EA21 /* HoughServiceUserTests-Info.plist */,
 				397D165A18169BC200C9EA21 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -256,9 +256,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		397D162F18169BC100C9EA21 /* DObjectsTest */ = {
+		397D162F18169BC100C9EA21 /* HoughServiceUser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 397D166218169BC200C9EA21 /* Build configuration list for PBXNativeTarget "DObjectsTest" */;
+			buildConfigurationList = 397D166218169BC200C9EA21 /* Build configuration list for PBXNativeTarget "HoughServiceUser" */;
 			buildPhases = (
 				397D162C18169BC100C9EA21 /* Sources */,
 				397D162D18169BC100C9EA21 /* Frameworks */,
@@ -268,14 +268,14 @@
 			);
 			dependencies = (
 			);
-			name = DObjectsTest;
+			name = HoughServiceUser;
 			productName = DObjectsTest;
-			productReference = 397D163018169BC100C9EA21 /* DObjectsTest.app */;
+			productReference = 397D163018169BC100C9EA21 /* HoughServiceUser.app */;
 			productType = "com.apple.product-type.application";
 		};
-		397D165018169BC200C9EA21 /* DObjectsTestTests */ = {
+		397D165018169BC200C9EA21 /* HoughServiceUserTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 397D166518169BC200C9EA21 /* Build configuration list for PBXNativeTarget "DObjectsTestTests" */;
+			buildConfigurationList = 397D166518169BC200C9EA21 /* Build configuration list for PBXNativeTarget "HoughServiceUserTests" */;
 			buildPhases = (
 				397D164C18169BC200C9EA21 /* Sources */,
 				397D164D18169BC200C9EA21 /* Frameworks */,
@@ -287,9 +287,9 @@
 			dependencies = (
 				397D165618169BC200C9EA21 /* PBXTargetDependency */,
 			);
-			name = DObjectsTestTests;
+			name = HoughServiceUserTests;
 			productName = DObjectsTestTests;
-			productReference = 397D165118169BC200C9EA21 /* DObjectsTestTests.octest */;
+			productReference = 397D165118169BC200C9EA21 /* HoughServiceUserTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -300,7 +300,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = 397D162A18169BC100C9EA21 /* Build configuration list for PBXProject "DObjectsTest" */;
+			buildConfigurationList = 397D162A18169BC100C9EA21 /* Build configuration list for PBXProject "HoughServiceUser" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -312,8 +312,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				397D162F18169BC100C9EA21 /* DObjectsTest */,
-				397D165018169BC200C9EA21 /* DObjectsTestTests */,
+				397D162F18169BC100C9EA21 /* HoughServiceUser */,
+				397D165018169BC200C9EA21 /* HoughServiceUserTests */,
 			);
 		};
 /* End PBXProject section */
@@ -382,7 +382,7 @@
 /* Begin PBXTargetDependency section */
 		397D165618169BC200C9EA21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 397D162F18169BC100C9EA21 /* DObjectsTest */;
+			target = 397D162F18169BC100C9EA21 /* HoughServiceUser */;
 			targetProxy = 397D165518169BC200C9EA21 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -473,16 +473,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DObjectsTest/DObjectsTest-Prefix.pch";
+				GCC_PREFIX_HEADER = "DObjectsTest/HoughServiceUser-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				INFOPLIST_FILE = "DObjectsTest/DObjectsTest-Info.plist";
+				INFOPLIST_FILE = "DObjectsTest/HoughServiceUser-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
 					"$(inherited)",
 					"\"$(SRCROOT)/DObjectsTest\"",
 					"\"$(SRCROOT)/DObjectsTest/python2.6/site-packages\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HoughServiceUser;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -492,16 +492,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DObjectsTest/DObjectsTest-Prefix.pch";
+				GCC_PREFIX_HEADER = "DObjectsTest/HoughServiceUser-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				INFOPLIST_FILE = "DObjectsTest/DObjectsTest-Info.plist";
+				INFOPLIST_FILE = "DObjectsTest/HoughServiceUser-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
 					"$(inherited)",
 					"\"$(SRCROOT)/DObjectsTest\"",
 					"\"$(SRCROOT)/DObjectsTest/python2.6/site-packages\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HoughServiceUser;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -513,8 +513,8 @@
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DObjectsTest/DObjectsTest-Prefix.pch";
-				INFOPLIST_FILE = "DObjectsTestTests/DObjectsTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DObjectsTestTests/HoughServiceUserTests-Info.plist";
+				PRODUCT_NAME = HoughServiceUserTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -527,8 +527,8 @@
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DObjectsTest/DObjectsTest-Prefix.pch";
-				INFOPLIST_FILE = "DObjectsTestTests/DObjectsTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DObjectsTestTests/HoughServiceUserTests-Info.plist";
+				PRODUCT_NAME = HoughServiceUserTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -537,7 +537,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		397D162A18169BC100C9EA21 /* Build configuration list for PBXProject "DObjectsTest" */ = {
+		397D162A18169BC100C9EA21 /* Build configuration list for PBXProject "HoughServiceUser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				397D166018169BC200C9EA21 /* Debug */,
@@ -546,7 +546,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		397D166218169BC200C9EA21 /* Build configuration list for PBXNativeTarget "DObjectsTest" */ = {
+		397D166218169BC200C9EA21 /* Build configuration list for PBXNativeTarget "HoughServiceUser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				397D166318169BC200C9EA21 /* Debug */,
@@ -555,7 +555,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		397D166518169BC200C9EA21 /* Build configuration list for PBXNativeTarget "DObjectsTestTests" */ = {
+		397D166518169BC200C9EA21 /* Build configuration list for PBXNativeTarget "HoughServiceUserTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				397D166618169BC200C9EA21 /* Debug */,

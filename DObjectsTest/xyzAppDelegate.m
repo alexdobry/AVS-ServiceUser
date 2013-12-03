@@ -43,6 +43,7 @@
 //    NSMutableArray* circles = [[NSMutableArray alloc] init];
 //    DataSource* source = [[DataSource alloc] init];
 
+    // setup opencv stuff
     IplImage* img = NULL;
     CvCapture *capture = 0;
     capture = cvCaptureFromCAM(-1);
@@ -51,15 +52,15 @@
     }
     CvFont* font;
     cvInitFont(font,CV_FONT_HERSHEY_DUPLEX,1,0.8,0.2,1,8);
-    
     cvNamedWindow("result", CV_WINDOW_AUTOSIZE);
     
+    // prepare fps 
     time_t start, end;
     double fps;
     int i = 0;
-    
     time(&start);
  
+    // start the internal camera and grap each frame
     while (true) {
         @autoreleasepool {
             img = cvQueryFrame(capture);

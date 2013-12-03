@@ -15,8 +15,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "397D162F18169BC100C9EA21"
                BuildableName = "DObjectsTest.app"
-               BlueprintName = "DObjectsTest"
-               ReferencedContainer = "container:DObjectsTest.xcodeproj">
+               BlueprintName = "HoughServiceUser"
+               ReferencedContainer = "container:HoughServiceUser.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,8 +33,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "397D165018169BC200C9EA21"
                BuildableName = "DObjectsTestTests.octest"
-               BlueprintName = "DObjectsTestTests"
-               ReferencedContainer = "container:DObjectsTest.xcodeproj">
+               BlueprintName = "HoughServiceUserTests"
+               ReferencedContainer = "container:HoughServiceUser.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,8 +43,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "397D162F18169BC100C9EA21"
             BuildableName = "DObjectsTest.app"
-            BlueprintName = "DObjectsTest"
-            ReferencedContainer = "container:DObjectsTest.xcodeproj">
+            BlueprintName = "HoughServiceUser"
+            ReferencedContainer = "container:HoughServiceUser.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,8 +61,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "397D162F18169BC100C9EA21"
             BuildableName = "DObjectsTest.app"
-            BlueprintName = "DObjectsTest"
-            ReferencedContainer = "container:DObjectsTest.xcodeproj">
+            BlueprintName = "HoughServiceUser"
+            ReferencedContainer = "container:HoughServiceUser.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,8 +79,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "397D162F18169BC100C9EA21"
             BuildableName = "DObjectsTest.app"
-            BlueprintName = "DObjectsTest"
-            ReferencedContainer = "container:DObjectsTest.xcodeproj">
+            BlueprintName = "HoughServiceUser"
+            ReferencedContainer = "container:HoughServiceUser.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
