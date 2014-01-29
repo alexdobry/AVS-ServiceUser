@@ -15,7 +15,7 @@ NSArray* MACHINE_NAMES;
 @synthesize dataSource;
 
 -(Cluster*) initWithDataSource:(DataSource*)source {
-    MACHINE_NAMES = [NSArray arrayWithObjects:@"pip01",@"pip02",@"pip03",@"pip04",@"pip05",@"pip06",@"pip07hallo",@"pip08hallo",@"pip09hallo",@"pip10", nil];
+    MACHINE_NAMES = [NSArray arrayWithObjects:@"pip01hallo",@"pip02hallo",@"pip03hallo",@"pip04hallo",@"pip05hallo",@"pip06hallo",@"pip07hallo",@"pip08hallo",@"pip09hallo",@"pip10hallo", nil];
     
     [self setDataSource:source];
     
