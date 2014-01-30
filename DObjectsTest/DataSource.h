@@ -17,10 +17,9 @@
 
 @property CvCapture *capture;
 @property long counter;
-@property long last_shown_image_Counter;
-
+@property long lastShownImageId;
 
 -(HoughImage*)getNextDataset;
--(bool)showImage:(HoughImage*) img;
+-(bool)showImage:(HoughImage*) houghImg;
 
 @end

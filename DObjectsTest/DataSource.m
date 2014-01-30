@@ -13,7 +13,7 @@
 
 @synthesize capture = _capture;
 @synthesize counter = _counter;
-@synthesize last_shown_image_Counter = _last_shown_image_Counter;
+@synthesize lastShownImageId = _lastShownImageId;
 
 - (id)init {
     self = [super init];
@@ -23,7 +23,7 @@
         if (!self.capture) {
             NSLog(@"Cannot initialize webcam");
         }
-        self.last_shown_image_Counter = -1;
+        self.lastShownImageId = -1;
     }
     return self;
 }
@@ -34,14 +34,14 @@
     }
 }
 
--(bool)showImage:(HoughImage*) img {
+-(bool)showImage:(HoughImage*) houghImg {
     @synchronized(self) {
-    if (img.imgId > self.last_shown_image_Counter) {
-        [self setLast_shown_image_Counter:img.imgId];
-        return true;
-    } else {
-        return false;
-    }
+        if (houghImg.imgId > self.lastShownImageId) {
+            self.lastShownImageId = houghImg.imgId;
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

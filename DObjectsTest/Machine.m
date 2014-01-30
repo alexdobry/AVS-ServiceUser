@@ -36,7 +36,6 @@
 
 -(void)checkStatus:(id)arg {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    
     id infoProtocol;
     
     NSConnection *theConnection = nil;
@@ -46,39 +45,33 @@
     
     NSString * servicePort = [portName stringByAppendingString:@"_service"];
     
-    // Schleife
     while (true) {
         sleep(3);
-        // wurde die Verbindung unterbrochen?
+        // conncection loss?
         if (!connected) {
-            // versuche Verbindung herzustellen
+            // reconnect
             port = (NSSocketPort *) [[NSSocketPortNameServer sharedInstance] portForName:servicePort host:@"*"];
             if (port == nil) {
-                // Verbindung kann nicht hergestellt werden
-//                NSLog(@"keine verbindung zu %@", portName);
+                // can't reconnent
                 sleep(5);
                 continue;
             }
             theConnection = [NSConnection connectionWithReceivePort:nil sendPort:port];
             
-            //Verbindungsstatus aktualisieren
+            // update connection
             [self setConnected:YES];
             
-            // Verbindung konfigurieren
             [theConnection setRequestTimeout:10];
             [theConnection setReplyTimeout:10];
             
             infoProtocol = [[theConnection rootProxy] retain];                
             [infoProtocol setProtocolForProxy:@protocol(InformantProtocol)];
             
-            //Create "Worker"-Thread
+            // create and start worker thread
             workerThread = [[NSThread alloc] initWithTarget:self selector:@selector(doWork:) object:nil];
-            // Worker-Thread starten
             [workerThread start];
             
         }
-        
-        
         
         //  Der try Block ist für den Ausfall eines Service Providers nötig. Der aufruf des Distributed Objects wirft eine Exception nach Timeout.
         @try {
@@ -88,13 +81,12 @@
             }
         }
         @catch (NSException *exception) {
-            // Verbindung zum Provider verloren (Timeout)
-            if ([[exception name] isEqualToString:NSPortTimeoutException])
-            {
-                // Verbindungsstatus aktualisieren
-                [self setConnected:NO]; // Beendet indirekt außerdem den Worker-Thread
+            // service provider connection is lost
+            if ([[exception name] isEqualToString:NSPortTimeoutException]) {
+                // update connection
+                [self setConnected:NO]; 
                 
-                // Ressourcen freigeben
+                // release ressources
                 NSLog(@"Verbindung verloren: %@ %d", portName, currentNumber);
                 [infoProtocol release];
                 [[NSSocketPortNameServer sharedInstance] removePortForName:portName];
@@ -104,17 +96,12 @@
                 theConnection = nil;
                 port = nil;
                 
-                //Vor neuem Verbindungsversuch warten
-                sleep(120); //Muss hoch sein weil das Betriebssystem den alten Port ziemlich lange offen hält
+                // wait for the next connection attempt
+                sleep(120); 
             }
-            
-        }
-        @finally {
-            
         }
         
     }
-    
     
     [pool release];
 
@@ -127,8 +114,8 @@
     NSSocketPort *port = nil;
     
     id houghProtocol;
-     
-    //Verbindung herstellen (ohne Fehlerbehandlung, da der Thread sonst sowieso beendet wird)
+ 
+    // connect
     port = (NSSocketPort *) [[[NSSocketPortNameServer sharedInstance] portForName:portName host:@"*"] retain];
     theConnection = [NSConnection connectionWithReceivePort:nil sendPort:port];
     
@@ -142,9 +129,8 @@
     HoughImage* houghImg = NULL;
     NSMutableArray* circles = [[NSMutableArray alloc] init];
     
-    // Do Work
+    // do the actual work
     while (connected) {
-        
         //  Der try Block ist für den Ausfall eines Service Providers nötig. Der aufruf des Distributed Objects wirft eine Exception nach Timeout.
         @try {
             @autoreleasepool {
@@ -160,14 +146,9 @@
         }
         
         @catch (NSException *exception) {
-            if ([[exception name] isEqualToString:NSPortTimeoutException])
-            {
-                // Falls tatsächlich keine Verbindung zum Provieder mehr besteht, so wird dies im Status-Thread erkannt
+            if ([[exception name] isEqualToString:NSPortTimeoutException]) {
                 NSLog(@"Datenpaket Nr. ... konnte nicht bearbeitet werden (Timeout).");
             }
-            
-        }
-        @finally {
             
         }
   }
@@ -175,11 +156,11 @@
 
 }
 
-- (IplImage*)drawCircles:(NSMutableArray*) circles on:(IplImage*) img {
+- (IplImage*)drawCircles:(NSMutableArray*) circles on:(IplImage*) iplImage {
     for (Circle* circle in circles) {
-        cvCircle(img, cvPoint(circle.x, circle.y), circle.r, CV_RGB(255,0,0), 3, 8, 0);
+        cvCircle(iplImage, cvPoint(circle.x, circle.y), circle.r, CV_RGB(255,0,0), 3, 8, 0);
     }
-    return img;
+    return iplImage;
 }
 
 - (NSImage*)createNSImageFromIplImage:(IplImage *)image {
