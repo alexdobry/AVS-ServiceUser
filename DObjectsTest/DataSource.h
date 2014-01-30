@@ -19,6 +19,7 @@
 @property long counter;
 @property long last_shown_image_Counter;
 
+
 -(HoughImage*)getNextDataset;
 -(bool)showImage:(HoughImage*) img;
 

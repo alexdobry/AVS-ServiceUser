@@ -24,8 +24,6 @@
             NSLog(@"Cannot initialize webcam");
         }
         self.last_shown_image_Counter = -1;
-        //CvFont* font;
-        //cvInitFont(font,CV_FONT_HERSHEY_DUPLEX,1,0.8,0.2,1,8);
     }
     return self;
 }

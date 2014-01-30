@@ -141,7 +141,7 @@
     
     HoughImage* houghImg = NULL;
     NSMutableArray* circles = [[NSMutableArray alloc] init];
-
+    
     // Do Work
     while (connected) {
         
