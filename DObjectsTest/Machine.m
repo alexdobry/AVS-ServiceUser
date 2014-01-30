@@ -84,7 +84,7 @@
         @try {
             NSMutableArray* coreUsage = [infoProtocol getInfo];
             for (NSNumber* usage in coreUsage) {
-                NSLog(@"%@", usage);
+                //NSLog(@"%@", usage)‚;
             }
         }
         @catch (NSException *exception) {
@@ -141,7 +141,6 @@
     
     HoughImage* houghImg = NULL;
     NSMutableArray* circles = [[NSMutableArray alloc] init];
-    
     // Do Work
     while (connected) {
         
@@ -150,9 +149,13 @@
             @autoreleasepool {
                 houghImg = [dataSource getNextDataset];
                 circles = [houghProtocol performHoughTransformationWithNSImage:[self createNSImageFromIplImage:houghImg.img]];
-                houghImg.img = [self drawCircles:circles on:houghImg.img];
-                @synchronized(dataSource) {
-                    cvShowImage("result", houghImg.img);
+                if ([dataSource showImage:houghImg]) {
+                    houghImg.img = [self drawCircles:circles on:houghImg.img];
+                    @synchronized(dataSource) {
+                        NSLog(@"%ld", houghImg.imgId);
+                        cvShowImage("result", houghImg.img);
+                        
+                    }
                 }
             }
         }
