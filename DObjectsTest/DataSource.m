@@ -32,19 +32,7 @@
 
 -(HoughImage*)getNextDataset {
     @synchronized(self) {
-        //int ret = data;
-        //[self setData:data+1];
-        //return data++;
-        
-        HoughImage* houghImg = nil;
-        
-        @autoreleasepool {
-            houghImg = [[HoughImage alloc] initWithIplImage:cvQueryFrame(self.capture) andId:self.counter++];
-            if (!houghImg) {
-                NSLog(@"Failed to retrive frame");
-            }            
-        }
-        return houghImg;
+        return [[HoughImage alloc] initWithIplImage:cvCloneImage(cvQueryFrame(self.capture)) andId:self.counter++];
     }
 }
 

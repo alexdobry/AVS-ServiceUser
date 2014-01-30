@@ -141,6 +141,7 @@
     
     HoughImage* houghImg = NULL;
     NSMutableArray* circles = [[NSMutableArray alloc] init];
+
     // Do Work
     while (connected) {
         
@@ -150,11 +151,9 @@
                 houghImg = [dataSource getNextDataset];
                 circles = [houghProtocol performHoughTransformationWithNSImage:[self createNSImageFromIplImage:houghImg.img]];
                 if ([dataSource showImage:houghImg]) {
-                    houghImg.img = [self drawCircles:circles on:houghImg.img];
                     @synchronized(dataSource) {
-                        NSLog(@"%ld", houghImg.imgId);
+                        houghImg.img = [self drawCircles:circles on:houghImg.img];
                         cvShowImage("result", houghImg.img);
-                        
                     }
                 }
             }
@@ -205,6 +204,7 @@
     CGImageRelease(imageRef);
     CGDataProviderRelease(provider);
     CGColorSpaceRelease(colorSpace);
+
     return ret;
 }
 

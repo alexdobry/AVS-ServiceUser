@@ -15,8 +15,6 @@
 
 @interface DataSource : NSObject
 
-@property HoughImage *img2;
-
 @property CvCapture *capture;
 @property long counter;
 @property long last_shown_image_Counter;
