@@ -135,7 +135,7 @@
         @try {
             @autoreleasepool {
                 houghImg = [dataSource getNextDataset];
-                circles = [houghProtocol performHoughTransformationWithNSImage:[self createNSImageFromIplImage:houghImg.img]];
+                circles = [houghProtocol performHoughTransformationWithNSImage:[NSImage imageWithIplImage:houghImg.img]];
                 if ([dataSource showImage:houghImg]) {
                     @synchronized(dataSource) {
                         houghImg.img = [self drawCircles:circles on:houghImg.img];
@@ -161,32 +161,6 @@
         cvCircle(iplImage, cvPoint(circle.x, circle.y), circle.r, CV_RGB(255,0,0), 3, 8, 0);
     }
     return iplImage;
-}
-
-- (NSImage*)createNSImageFromIplImage:(IplImage *)image {
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    // Allocating the buffer for CGImage
-    NSData *data =
-    [NSData dataWithBytes:image->imageData length:image->imageSize];
-    CGDataProviderRef provider =
-    CGDataProviderCreateWithCFData((CFDataRef)data);
-    // Creating CGImage from chunk of IplImage
-    CGImageRef imageRef = CGImageCreate(
-                                        image->width, image->height,
-                                        image->depth, image->depth * image->nChannels, image->widthStep,
-                                        colorSpace, kCGImageAlphaNone|kCGBitmapByteOrderDefault,
-                                        provider, NULL, false, kCGRenderingIntentDefault
-                                        );
-    // Getting UIImage from CGImage
-    NSSize size;
-    size.height = image->height;
-    size.width = image->width;
-    NSImage *ret = [[NSImage alloc] initWithCGImage:imageRef size:size];
-    CGImageRelease(imageRef);
-    CGDataProviderRelease(provider);
-    CGColorSpaceRelease(colorSpace);
-
-    return ret;
 }
 
 @end

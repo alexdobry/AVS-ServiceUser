@@ -37,6 +37,7 @@
 		F074506F183BA42D00ED1C09 /* Cluster.m in Sources */ = {isa = PBXBuildFile; fileRef = F074506E183BA42D00ED1C09 /* Cluster.m */; };
 		F0745073183BA4E500ED1C09 /* Machine.m in Sources */ = {isa = PBXBuildFile; fileRef = F0745072183BA4E500ED1C09 /* Machine.m */; };
 		F0745079183BC01200ED1C09 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F0745078183BC01200ED1C09 /* DataSource.m */; };
+		FA1D7BA7189AABFF003DE501 /* NSImage+IplImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1D7BA6189AABFF003DE501 /* NSImage+IplImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		F0745077183BC01200ED1C09 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		F0745078183BC01200ED1C09 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 		F074507A183BD60600ED1C09 /* InformantProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformantProtocol.h; sourceTree = "<group>"; };
+		FA1D7BA5189AABFF003DE501 /* NSImage+IplImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+IplImage.h"; sourceTree = "<group>"; };
+		FA1D7BA6189AABFF003DE501 /* NSImage+IplImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+IplImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,8 @@
 				0624B5D31844E6B700FA6958 /* Circle.m */,
 				06C45E56184E509500B3C976 /* HoughImage.h */,
 				06C45E57184E509500B3C976 /* HoughImage.m */,
+				FA1D7BA5189AABFF003DE501 /* NSImage+IplImage.h */,
+				FA1D7BA6189AABFF003DE501 /* NSImage+IplImage.m */,
 				0624B5D61844E6E800FA6958 /* HoughTransformationProtocol.h */,
 				397D164918169BC200C9EA21 /* MainMenu.xib */,
 				397D163B18169BC100C9EA21 /* Supporting Files */,
@@ -343,6 +348,7 @@
 				397D164818169BC100C9EA21 /* AppDelegate.m in Sources */,
 				F074506F183BA42D00ED1C09 /* Cluster.m in Sources */,
 				F0745073183BA4E500ED1C09 /* Machine.m in Sources */,
+				FA1D7BA7189AABFF003DE501 /* NSImage+IplImage.m in Sources */,
 				F0745079183BC01200ED1C09 /* DataSource.m in Sources */,
 				0624B5D41844E6B700FA6958 /* Circle.m in Sources */,
 				06C45E58184E509500B3C976 /* HoughImage.m in Sources */,

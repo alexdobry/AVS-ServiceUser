@@ -10,6 +10,7 @@
 #import "HoughTransformationProtocol.h"
 #import "InformantProtocol.h"
 #import "DataSource.h"
+#import "NSImage+IplImage.h"
 
 #import "Circle.h"
 #include <opencv/cv.h>
