@@ -30,6 +30,5 @@
 
 -(Machine*) initWithName:(NSString*)name dataSource:(DataSource*)source;
 -(IplImage*) drawCircles:(NSMutableArray*) circles on:(IplImage*) iplImage;
--(NSImage*) createNSImageFromIplImage:(IplImage *)iplImage;
 
 @end
