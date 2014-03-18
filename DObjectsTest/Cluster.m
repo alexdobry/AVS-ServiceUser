@@ -14,9 +14,8 @@ NSArray* MACHINE_NAMES;
 @synthesize machineThreads;
 @synthesize dataSource;
 
--(Cluster*) initWithDataSource:(DataSource*)source {
-    MACHINE_NAMES = [NSArray arrayWithObjects:@"pip01hallo",@"pip02hallo",@"pip03hallo",@"pip04hallo",@"pip05hallo",@"pip06hallo",@"pip07hallo",@"pip08hallo",@"pip09hallo",@"pip10hallo", nil];
-    
+-(Cluster*) initWithDataSource:(DataSource*)source andProviderNames:(NSArray*) names {
+    MACHINE_NAMES = names;     
     [self setDataSource:source];
     
     for (NSString* portName in MACHINE_NAMES) {

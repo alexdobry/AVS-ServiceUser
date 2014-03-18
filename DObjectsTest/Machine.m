@@ -60,6 +60,9 @@
             
             // update connection
             [self setConnected:YES];
+            // ui benachrichtigen, dass provider verbunden ist
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"connected" object:portName];
+            
             
             [theConnection setRequestTimeout:10];
             [theConnection setReplyTimeout:10];
@@ -76,15 +79,18 @@
         //  Der try Block ist für den Ausfall eines Service Providers nötig. Der aufruf des Distributed Objects wirft eine Exception nach Timeout.
         @try {
             NSMutableArray* coreUsage = [infoProtocol getInfo];
-            for (NSNumber* usage in coreUsage) {
-                //NSLog(@"%@", usage)‚;
-            }
+            [coreUsage addObject:self.portName];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"usage" object:coreUsage];
+            
         }
         @catch (NSException *exception) {
             // service provider connection is lost
             if ([[exception name] isEqualToString:NSPortTimeoutException]) {
                 // update connection
                 [self setConnected:NO]; 
+                
+                // ui benachrichtigen, dass provider nicht mehr verbunden ist
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"disconnected" object:portName];
                 
                 // release ressources
                 NSLog(@"Verbindung verloren: %@ %d", portName, currentNumber);
@@ -102,6 +108,7 @@
         }
         
     }
+    
     
     [pool release];
 

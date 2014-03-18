@@ -15,6 +15,6 @@
 @property(retain) DataSource* dataSource;
 @property(retain) NSMutableArray* machineThreads;
 
--(Cluster*) initWithDataSource:(DataSource*)source;
+-(Cluster*) initWithDataSource:(DataSource* )source andProviderNames:(NSArray*) providerNames;
 
 @end
