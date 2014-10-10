@@ -75,8 +75,9 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{    
-    NSArray* providerNames = [NSArray arrayWithObjects:@"pip01hallo",@"pip02hallo",@"pip03hallo",@"pip04hallo",@"pip05hallo",@"pip06hallo",@"pip07hallo",@"pip08hallo",@"pip09hallo",@"pip10hallo", nil];
+{
+    // benötigte pip rechner an den neuen namen anpassen
+    NSArray* providerNames = [NSArray arrayWithObjects:@"pip01hallo",@"pip02hallo",@"pip03hallo",@"pip04hallo",@"pip05hallo",@"pip06hallo",@"pip07s Mac Prohallo",@"pip08hallo",@"pip09hallo",@"pip10hallo", nil];
     NSArray* providerTextFields = [NSArray arrayWithObjects:self.pip01TextField,self.pip02TextField,self.pip03TextField,self.pip04TextField,self.pip05TextField,self.pip06TextField,self.pip07TextField,self.pip08TextField,self.pip09TextField,self.pip10TextField, nil];
     NSArray* cpuTextFields = [NSArray arrayWithObjects:self.pip01UsageTextField,self.pip02UsageTextField,self.pip03UsageTextField,self.pip04UsageTextField,self.pip05UsageTextField,self.pip06UsageTextField,self.pip07UsageTextField,self.pip08UsageTextField,self.pip09UsageTextField,self.pip10UsageTextField, nil];
    
